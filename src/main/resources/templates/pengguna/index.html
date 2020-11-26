@@ -1,0 +1,20 @@
+<div th:switch="${penggunas}">
+    <h2 th:case="null">Belum ada data pengguna!</h2>
+    <div th:case="*">
+        <h2>Users</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="pengguna : ${penggunas}">
+                <td th:text="${pengguna.username}"></td>
+                <td th:text="${pengguna.password}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
